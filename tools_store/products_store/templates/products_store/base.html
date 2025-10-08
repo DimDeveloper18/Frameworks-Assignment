@@ -15,21 +15,21 @@
         <header>
                 {% comment %} <img id="mlogo" src="{{ url_for('static', filename="images/spstlogo.jpg")}}" alt="Site Logo" height="30" width="50"> {% endcomment %}
                 <h1>Tools Store</h1>
-                    {% comment %} <div class="regbutt">
-                        <button id="regBtn"><a href="{% url 'register_page' %}">Registration</a></button>
-                        <button id="logBtn"><a href="{% url 'login_page' %}">Login</a></button>
+                    <div class="regbutt">
+                        <button id="regBtn"><a href="{% url 'products_store-register_page' %}">Registration</a></button>
+                        <button id="logBtn"><a href="{% url 'products_store-login_page' %}">Login</a></button>
                             {% if current_user.is_authenticated %}
-                                <button id="bask"><a href="{% url 'basket_page' %}">Basket</a></button>
-                                <button id="logoutbtn"><a href="{% url 'logout' %}">Logout</a> </button>
+                                <button id="bask"><a href="{% url 'products_store-basket_page' %}">Basket</a></button>
+                                <button id="logoutbtn"><a href="{% url 'products_store-logout' %}">Logout</a> </button>
                             {% endif %}
-                    </div> {% endcomment %}
+                    </div>
         </header>
         <nav>
             <ul>
                 <li><a href="{% url 'products_store-index' %}">Home</a></li>
-                {% comment %} <li><a href="{% url 'tools_page' %}">Tools</a></li>
-                <li id="contli"><a href="{% url 'contact_page' %}">Contact us</a></li>
-                <li id="delivli"><a href="{% url 'delivery_page' %}">Delivery</a></li> {% endcomment %}
+                <li><a href="{% url 'products_store-tools_page' %}">Tools</a></li>
+                <li id="contli"><a href="{% url 'products_store-contact_page' %}">Contact us</a></li>
+                <li id="delivli"><a href="{% url 'products_store-delivery_page' %}">Delivery</a></li>
             </ul>
             <div class="soclink">
                 <ul>
