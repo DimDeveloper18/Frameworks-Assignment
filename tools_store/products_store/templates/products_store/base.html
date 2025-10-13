@@ -11,6 +11,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'products_store/css/homelarge.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'products_store/css/regbutt.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'products_store/css/aside.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'products_store/css/toolsp.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'products_store/css/toolsjs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'products_store/css/contact.css' %}">
     <link rel="icon" href="{% static 'products_store/product_image/spstlogo.jpg' %}">
     <title>Tool Store</title>
 </head>
@@ -32,7 +35,7 @@
             <ul>
                 <li><a href="{% url 'products_store-index' %}">Home</a></li>
                 <li><a href="{% url 'products_store-tools' %}">Tools</a></li>
-                <li id="contli"><a href="{% url 'products_store-contact_page' %}">Contact us</a></li>
+                <li id="contli"><a href="{% url 'products_store-contact' %}">Contact us</a></li>
                 <li id="delivli"><a href="{% url 'products_store-delivery_page' %}">Delivery</a></li>
             </ul>
             <div class="soclink">
@@ -110,4 +113,5 @@
 </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="{% static 'products_store/js/aside.js' %}"></script>
+    <script src="{% static 'products_store/js/toolsprod.js' %}"></script>
 </html>
