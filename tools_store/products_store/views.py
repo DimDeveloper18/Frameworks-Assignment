@@ -10,3 +10,6 @@ def index(request):
 
 def tools(request):
     return render(request, 'products_store/tools.html')
+
+def contact(request):
+    return render(request, 'products_store/contact.html')
