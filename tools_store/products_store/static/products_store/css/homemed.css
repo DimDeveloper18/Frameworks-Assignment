@@ -17,9 +17,9 @@ h1{
     height: 50%;
     font-size: 3rem;
 }
-.regbutt{
+/* .regbutt{
     display: none;
-}
+} */
 nav{
     grid-column: 1 / 3;
     grid-row: 2;
