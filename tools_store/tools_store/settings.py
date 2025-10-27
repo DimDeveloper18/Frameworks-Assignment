@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'tools_store',
     'products_store',
+    'custom_comments',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
