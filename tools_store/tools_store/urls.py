@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tools_store/', include('products_store.urls')),
+    path('', include('products_store.urls')),
+    path('', include('custom_comments.urls')),
 ]
