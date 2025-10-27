@@ -1,0 +1,16 @@
+{% extends 'products_store/base.html' %}
+{% load static %}
+{% block main %}
+        {% comment %} {% if current_user.is_authenticated %} {% endcomment %}
+        <section id="comresult">
+                <h3>Comments</h3>
+            <ul>
+                {% for comment in comments %}
+                    <li>{{ comment.comname }} </li>
+                    <li> Name: {{ comment.comwriter }} </li>
+                    <li> Date: {{ comment.commented_date }} </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% comment %} {% endif %} {% endcomment %}
+{% endblock main %}
