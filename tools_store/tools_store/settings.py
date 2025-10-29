@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'tools_store',
     'products_store',
     'custom_comments',
+    'customers',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
