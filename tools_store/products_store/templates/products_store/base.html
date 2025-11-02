@@ -49,6 +49,15 @@
             </div>
         </nav>
     <main>
+        <div class="fs-4 fw-bold bg-secondary">
+            {% if messages %}
+                {% for message in messages %}
+                    <div>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
         {% block main %}
         {% endblock main%}
     </main>
