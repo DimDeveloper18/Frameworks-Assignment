@@ -16,17 +16,5 @@
         <div id="subButtReg">
             <button type="submit" class="btn btn-danger border border-dark border-2" value="Submit">Submit</button>
         </div>
-        {% comment %} <div id="errorstatus">
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <ul class="flashes">
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endwith %}
-        </div> {% endcomment %}
-    {% comment %} </form> {% endcomment %}
         </section>
 {% endblock main%}
