@@ -10,8 +10,8 @@ def reg_form(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Wellcome {'username'}!')
-            return redirect('products_store-index')
+            messages.success(request, f'Registration completed {'username'}! Please login.')
+            return redirect('customers-login')
     else:
         form = UserRegisterForm()
 
