@@ -3,10 +3,13 @@
 {% load crispy_forms_tags %}
 {% block main %}
         <section>
-            <h2>Login</h2>
-            {% crispy form %}
-            <div id="subButtlog">
-                <button type="submit" class="btn btn-danger border border-dark border-2">Submit</button>
-            </div>
+            <form method="POST">
+                {% csrf_token %}
+                    <h2>Login</h2>
+                {{ form|crispy }}
+                <div id="subButtlog">
+                    <button type="submit" class="btn btn-danger border border-dark border-2">Submit</button>
+                </div>
+            </form>
         </section>
 {% endblock main%}
