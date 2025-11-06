@@ -25,5 +25,5 @@ urlpatterns = [
     path('', include('custom_comments.urls')),
     path('register/', customers_views.reg_form, name='customers-reg_form'),
     path('login/', auth_views.LoginView.as_view(template_name='customers/login.html'), name='customers-login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='customers/logout.html'), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='customers/logout.html'), name='customers-logout'),
 ]
