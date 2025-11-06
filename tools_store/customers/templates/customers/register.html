@@ -2,19 +2,14 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block main %}
-        <section>
-            <h2>Registration</h2>
-            {% crispy form %}
-            {% comment %} <h2>Registration</h2>
-            {% csrf_token %}
-            {{ form.as_table }} {% endcomment %}
-    {% comment %} <form method="POST">
-            <label class="input-group-text input-group-sm">User email</label>
-            <input type="email" name="email" required><br>
-    <label class="input-group-text">User password</label>
-    <input type="password" name="password" required><br> {% endcomment %}
-        <div id="subButtReg">
-            <button type="submit" class="btn btn-danger border border-dark border-2" value="Submit">Submit</button>
-        </div>
-        </section>
+    <section>
+           <form method="POST">
+                {% csrf_token %}
+                   <h2>Registration</h2>
+                {{ form|crispy }}
+                    <div id="subButtReg">
+                        <button type="submit" class="btn btn-danger border border-dark border-2" value="Submit">Submit</button>
+                   </div>
+            </form>
+    </section>
 {% endblock main%}
