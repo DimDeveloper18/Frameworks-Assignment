@@ -24,10 +24,12 @@
                 <img id="mlogo" src="{% static 'products_store/product_image/spstlogo.jpg' %}" alt="Site Logo" height="30" width="50">
                 <h1>Tools Store</h1>
                     <div class="regbutt">
-                        {% if current_user.is_authenticated %}
+                        {% if user.is_authenticated %}
                                 {% csrf_token %}
-                                <button id="bask"><a href="{% url 'products_store-basket_page' %}">Basket</a></button>
-                                <button id="logoutbtn"><a href="{% url 'products_store-logout' %}">Logout</a> </button>
+                                {% comment %} <button id="bask"><a href="{% url 'products_store-basket_page' %}">Basket</a></button> {% endcomment %}
+                                <form method="POST" action="{% url 'customers-logout'%}">
+                                    {% csrf_token %}
+                                <button id="logoutbtn" type="submit"> </button>
                         {% else %}
                             <button id="regBtn"><a href="{% url 'customers-reg_form' %}">Registration</a></button>
                             <button id="logBtn"><a href="{% url 'customers-login' %}">Login</a></button>
@@ -64,6 +66,9 @@
         {% endblock main%}
     </main>
         <aside>
+            {% if user.is_authenticated %}
+                <p class="text-danger fw-bold px-5">Loged in {{ user.username }}!</p>
+            {% endif%}
             <article class="martic">
                 <h4 id="asHead">Best latest offers</h4>
                 <article class="bsell1" id="battery">
