@@ -26,4 +26,6 @@ urlpatterns = [
     path('register/', customers_views.reg_form, name='customers-reg_form'),
     path('login/', auth_views.LoginView.as_view(template_name='customers/login.html'), name='customers-login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='customers/logout.html'), name='customers-logout'),
+    path('basket/', customers_views.basket_page, name='customers-basket_page'),
+    path('profile/', customers_views.profile_page, name='customers-profile_page'),
 ]
