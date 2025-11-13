@@ -28,7 +28,8 @@
                                 <button id="bask"><a href="{% url 'customers-basket_page' %}">Basket</a></button>
                                 <form method="POST" action="{% url 'customers-logout' %}">
                                     {% csrf_token %}
-                                <button id="logoutbtn" type="submit">Logout</button>
+                                    <button id="logoutbtn" type="submit">Logout</button>
+                                </form>
                         {% else %}
                             <button id="regBtn"><a href="{% url 'customers-reg_form' %}">Registration</a></button>
                             <button id="logBtn"><a href="{% url 'customers-login' %}">Login</a></button>
@@ -52,7 +53,7 @@
             </div>
         </nav>
     <main>
-        <div class="fs-4 fw-bold bg-secondary">
+        <div class="fs-4 fw-bold bg-secondary text-white mb-5">
             {% if messages %}
                 {% for message in messages %}
                     <div>
