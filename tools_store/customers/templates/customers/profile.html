@@ -4,8 +4,17 @@
 {% block main %}
         <section>
             <div>
-                <img src="{{ user.user_profile.image.url }}" height="70" width="70" class="rounded border border-dark border-4">
+                <img src="{{ user.user_profile.image.url }}" class="rounded border border-dark border-4">
                 <h2 fw-bold>{{ user.username }}</h2>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                        <h2>User Profile Details</h2>
+                    {{ uud_form|crispy }}
+                    {{ upu_form|crispy }}
+                    <div id="subButtupdate">
+                        <button type="submit" class="btn btn-danger border border-dark border-2">Update</button>
+                    </div>
+                </form>
                 <h4>Purchased history</h4>
             </div>
         </section>
