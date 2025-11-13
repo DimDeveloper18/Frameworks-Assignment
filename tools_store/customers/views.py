@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserUpdateDetailsForm, User_profileUpdateForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -24,5 +24,24 @@ def basket_page(request):
 
 @login_required
 def profile_page(request):
-    return render(request, 'customers/profile.html')
+    if request.method == 'POST':
+        uud_form = UserUpdateDetailsForm(request.POST, instance=request.user)
+        upu_form = User_profileUpdateForm(request.POST, request.FILES, instance=request.user.user_profile)
+
+        if uud_form.is_valid() and upu_form.is_valid():
+            uud_form.save()
+            upu_form.save()
+            messages.success(request, f'User details successfuly updated!')
+            return redirect('customers-profile_page')
+    else:
+        uud_form = UserUpdateDetailsForm(instance=request.user)
+        upu_form = User_profileUpdateForm(instance=request.user.user_profile)
+
+
+
+    content = {
+        'uud_form': uud_form,
+        'upu_form': upu_form
+    }
+    return render(request, 'customers/profile.html', content)
 
